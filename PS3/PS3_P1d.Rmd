@@ -1,0 +1,25 @@
+---
+title: "Econometrics PS1(d)"
+output: html_document
+date: "2023-11-21"
+---
+
+```{r setup, include=FALSE}
+data = read_excel("C:/Users/Yunhan Guo/Desktop/2023 Fall/P218 Econometrics1/Problem Sets/PS3/SP500Index.xlsx")
+colnames(data) = c("date", "sp500")
+data["log_sp500"] = log(data["sp500"])
+T = nrow(data)
+```
+                                         
+
+```{r}
+delta = (data$log_sp500[T] - data$log_sp500[1]) / (T-1)
+delta
+```
+
+
+```{r}
+sigma = sqrt(sum((diff(data$log_sp500) - delta) ^ 2) / (T-1))
+sigma
+```
+
