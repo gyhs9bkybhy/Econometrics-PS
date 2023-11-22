@@ -24,7 +24,7 @@ reg C_pc L(1/4).C_pc
 
 // 5 (c) 
 gen C_pc_log = log(C_pc)
-gen Y_pc = realdisposa`bleincome / population
+gen Y_pc = realdisposableincome / population
 gen Y_pc_log = log(Y_pc)
 
 gen Y_pc_log_g0 = Y_pc_log - L1.Y_pc_log
